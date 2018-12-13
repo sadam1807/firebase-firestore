@@ -29,7 +29,7 @@ function renderCafe(doc){
 }
 
 //getting data
-db.collection('cafes').where('city', '>', 'F').get().then((snapshot) => {
+db.collection('cafes').where('city', '==', 'India').orderBy('name').get().then((snapshot) => {
      snapshot.docs.forEach(doc => {
          renderCafe(doc);
      })
